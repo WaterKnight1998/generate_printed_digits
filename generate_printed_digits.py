@@ -342,9 +342,10 @@ def make_3_datasets():
     augmented = dict(character=[*range(10)],                                # +[*ascii_letters]
              font=fonts,
              italic=[False,],
+             bold=[True, ],
              rot=[0,],
-             down=[0,-1, 1],
-             right=[0,-1, 1,],
+             down=[0,-1, 1,-2,2],
+             right=[0,-1, 1,-2,2,-3,3,-4,4,-5,5],
              margins=[2,],
              resolution=[28,],
              flatten=[True,])
