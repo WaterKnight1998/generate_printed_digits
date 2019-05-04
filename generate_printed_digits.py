@@ -345,7 +345,7 @@ def make_3_datasets():
              bold=[True, ],
              rot=[0,],
              down=[0,-1, 1,-2,2],
-             right=[0,-1, 1,-2,2,-3,3,-4,4,-5,5],
+             right=[0,-1, 1,-2,2,-3,3,-4,4,-5,5,-6,6,-7,7,-8,8,-9,9,-10,10],
              margins=[2,],
              resolution=[28,],
              flatten=[True,])
