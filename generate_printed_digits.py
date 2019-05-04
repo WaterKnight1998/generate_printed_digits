@@ -9,10 +9,14 @@ def get_image_matrix(character, **kwargs):
     fontname = ([kwargs.get(k) for k in kwargs.keys() if str(k).lower() in "fontfamily"]+["Arial"])[0]
     key = ([str(k).lower() for k in kwargs.keys() if str(k).lower() in "italicstyle"]+["italic",])[0]
     b = False if str(kwargs.get(key, 'none')).lower() in ("none","normal","false") else True
-    italic = "italic" if b else "normal"
-    
+    estilo = "italic" if b else "normal"
+
+    key = ([str(k).lower() for k in kwargs.keys() if str(k).lower() in "boldstyle"] + ["bold", ])[0]
+    b = False if str(kwargs.get(key, 'none')).lower() in ("none", "normal", "false") else True
+    estilo = "bold" if b else "normal"
+
     figure(figsize=(1,1))
-    text(0.5, 0.5, character, va='center', ha='center', size=50, fontname=fontname, style=italic)
+    text(0.5, 0.5, character, va='center', ha='center', size=50, fontname=fontname, style=estilo)
     axis('off')
 
     from tempfile import NamedTemporaryFile
@@ -322,11 +326,12 @@ def make_dataset(name, dict):
 def make_3_datasets():
     #define kwargs for the three datasets
     from string import ascii_letters
-    fonts = ["Garamond","Lucida Console","Sylfaen","Tahoma","Corbel","Cambria","DejaVu Sans", "Arial", "Times New Roman","Consolas","Calibri","Candara","Century"]
+    fonts = ["Arial"]
     
     standard = dict(character=[*range(10)]*2,                                # +[*ascii_letters]
              font=fonts,
              italic=[False,],
+             bold=[True, ],
              rot=[0,],
              down=[0,],
              right=[0,],
