@@ -326,7 +326,7 @@ def make_dataset(name, dict):
 def make_3_datasets():
     #define kwargs for the three datasets
     from string import ascii_letters
-    fonts = ["Arial"]
+    fonts = ["Arial","Liberation Sans","FreeSans","Jamrul",]
     
     standard = dict(character=[*range(10)]*2,                                # +[*ascii_letters]
              font=fonts,
